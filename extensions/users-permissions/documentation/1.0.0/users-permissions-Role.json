@@ -561,6 +561,33 @@
                 "role": {
                   "type": "string"
                 },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "zip": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "orders": {
+                  "type": "object"
+                },
+                "cart": {
+                  "type": "string"
+                },
+                "favorites": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
