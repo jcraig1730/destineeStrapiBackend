@@ -602,10 +602,6 @@
           },
           "items": {
             "type": "object"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -616,10 +612,6 @@
           },
           "items": {
             "type": "object"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

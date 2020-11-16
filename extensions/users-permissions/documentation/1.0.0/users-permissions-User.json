@@ -1286,9 +1286,6 @@
               "items": {
                 "type": "object"
               },
-              "published_at": {
-                "type": "string"
-              },
               "created_by": {
                 "type": "string"
               },
@@ -1309,9 +1306,6 @@
                 "type": "string"
               },
               "user": {
-                "type": "string"
-              },
-              "published_at": {
                 "type": "string"
               },
               "created_by": {
@@ -1352,9 +1346,6 @@
                 },
                 "items": {
                   "type": "object"
-                },
-                "published_at": {
-                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"

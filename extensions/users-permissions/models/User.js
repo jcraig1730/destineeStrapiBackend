@@ -4,6 +4,7 @@ module.exports = {
       try {
         const cartProto = await strapi.models.cart.forge({
           user: data.id,
+          items: [],
         });
         const cart = await cartProto.save();
         const favoritesProto = await strapi.models.favorite.forge({

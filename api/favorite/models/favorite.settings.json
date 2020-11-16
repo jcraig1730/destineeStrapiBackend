@@ -8,16 +8,16 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "items": {
       "collection": "item"
     },
     "user": {
-      "via": "favorites",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "favorites"
     }
   }
 }

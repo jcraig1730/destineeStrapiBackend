@@ -85,8 +85,8 @@
       "model": "cart"
     },
     "favorites": {
-      "model": "favorite",
-      "via": "user"
+      "via": "user",
+      "model": "favorite"
     },
     "salesOrders": {
       "via": "user",

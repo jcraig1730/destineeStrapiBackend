@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "11/16/2020 1:28:57 PM"
+    "x-generation-date": "11/16/2020 4:18:24 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5109,10 +5109,6 @@
           },
           "items": {
             "type": "object"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -5123,10 +5119,6 @@
           },
           "items": {
             "type": "object"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -5356,10 +5348,6 @@
                 "type": "string"
               }
             }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -5370,10 +5358,6 @@
           },
           "user": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -6016,10 +6000,6 @@
           },
           "items": {
             "type": "object"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -6045,10 +6025,6 @@
           },
           "items": {
             "type": "object"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -6338,9 +6314,6 @@
               "items": {
                 "type": "object"
               },
-              "published_at": {
-                "type": "string"
-              },
               "created_by": {
                 "type": "string"
               },
@@ -6361,9 +6334,6 @@
                 "type": "string"
               },
               "user": {
-                "type": "string"
-              },
-              "published_at": {
                 "type": "string"
               },
               "created_by": {
@@ -6404,9 +6374,6 @@
                 },
                 "items": {
                   "type": "object"
-                },
-                "published_at": {
-                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
