@@ -74,18 +74,23 @@
     "zip": {
       "type": "string"
     },
+    "state": {
+      "type": "string"
+    },
     "phone": {
       "type": "string"
     },
-    "orders": {
-      "type": "json",
-      "required": false
-    },
     "cart": {
-      "collection": "item"
+      "via": "user",
+      "model": "cart"
     },
     "favorites": {
-      "collection": "item"
+      "model": "favorite",
+      "via": "user"
+    },
+    "salesOrders": {
+      "via": "user",
+      "collection": "sales-order"
     }
   }
 }

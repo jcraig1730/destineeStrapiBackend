@@ -576,17 +576,23 @@
                 "zip": {
                   "type": "string"
                 },
-                "phone": {
+                "state": {
                   "type": "string"
                 },
-                "orders": {
-                  "type": "object"
+                "phone": {
+                  "type": "string"
                 },
                 "cart": {
                   "type": "string"
                 },
                 "favorites": {
                   "type": "string"
+                },
+                "salesOrders": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

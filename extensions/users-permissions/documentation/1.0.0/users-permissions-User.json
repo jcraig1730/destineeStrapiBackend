@@ -1266,11 +1266,11 @@
           "zip": {
             "type": "string"
           },
-          "phone": {
+          "state": {
             "type": "string"
           },
-          "orders": {
-            "type": "object"
+          "phone": {
+            "type": "string"
           },
           "cart": {
             "required": [
@@ -1280,32 +1280,11 @@
               "id": {
                 "type": "string"
               },
-              "title": {
+              "user": {
                 "type": "string"
               },
-              "price": {
-                "type": "number"
-              },
-              "description": {
-                "type": "string"
-              },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "mainImage": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "quantity": {
-                "type": "integer"
+              "items": {
+                "type": "object"
               },
               "published_at": {
                 "type": "string"
@@ -1326,32 +1305,11 @@
               "id": {
                 "type": "string"
               },
-              "title": {
+              "items": {
                 "type": "string"
               },
-              "price": {
-                "type": "number"
-              },
-              "description": {
+              "user": {
                 "type": "string"
-              },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "mainImage": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "quantity": {
-                "type": "integer"
               },
               "published_at": {
                 "type": "string"
@@ -1361,6 +1319,49 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "salesOrders": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "shipped": {
+                  "type": "boolean"
+                },
+                "subtotal": {
+                  "type": "number"
+                },
+                "tax": {
+                  "type": "number"
+                },
+                "shipping": {
+                  "type": "number"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "items": {
+                  "type": "object"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -1420,17 +1421,23 @@
           "zip": {
             "type": "string"
           },
-          "phone": {
+          "state": {
             "type": "string"
           },
-          "orders": {
-            "type": "object"
+          "phone": {
+            "type": "string"
           },
           "cart": {
             "type": "string"
           },
           "favorites": {
             "type": "string"
+          },
+          "salesOrders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
