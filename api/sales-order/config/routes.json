@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/sales-orders/create-payment-intent",
+      "handler": "sales-order.createPaymentIntent",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

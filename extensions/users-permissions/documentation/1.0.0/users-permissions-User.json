@@ -1316,17 +1316,15 @@
               }
             }
           },
-          "salesOrders": {
+          "orders": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "items"
               ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "user": {
                   "type": "string"
                 },
                 "shipped": {
@@ -1346,6 +1344,18 @@
                 },
                 "items": {
                   "type": "object"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "shippingAddress": {
+                  "type": "component"
+                },
+                "billingAddress": {
+                  "type": "component"
+                },
+                "paymentId": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -1424,7 +1434,7 @@
           "favorites": {
             "type": "string"
           },
-          "salesOrders": {
+          "orders": {
             "type": "array",
             "items": {
               "type": "string"

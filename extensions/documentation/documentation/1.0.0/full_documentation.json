@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "11/16/2020 4:18:24 PM"
+    "x-generation-date": "11/18/2020 6:53:23 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2920,6 +2920,77 @@
         ]
       }
     },
+    "/sales-orders/create-payment-intent": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Sales-order"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/email/": {
       "post": {
         "deprecated": false,
@@ -5093,7 +5164,7 @@
               "favorites": {
                 "type": "string"
               },
-              "salesOrders": {
+              "orders": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -5335,7 +5406,7 @@
               "favorites": {
                 "type": "string"
               },
-              "salesOrders": {
+              "orders": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -5899,11 +5970,31 @@
       },
       "Sales-order": {
         "required": [
-          "id"
+          "id",
+          "items"
         ],
         "properties": {
           "id": {
             "type": "string"
+          },
+          "shipped": {
+            "type": "boolean",
+            "default": false
+          },
+          "subtotal": {
+            "type": "number"
+          },
+          "tax": {
+            "type": "number"
+          },
+          "shipping": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          },
+          "items": {
+            "type": "object"
           },
           "user": {
             "required": [
@@ -5969,7 +6060,7 @@
               "favorites": {
                 "type": "string"
               },
-              "salesOrders": {
+              "orders": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -5983,33 +6074,71 @@
               }
             }
           },
-          "shipped": {
-            "type": "boolean"
+          "shippingAddress": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
           },
-          "subtotal": {
-            "type": "number"
+          "billingAddress": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
           },
-          "tax": {
-            "type": "number"
-          },
-          "shipping": {
-            "type": "number"
-          },
-          "total": {
-            "type": "number"
-          },
-          "items": {
-            "type": "object"
+          "paymentId": {
+            "type": "string"
           }
         }
       },
       "NewSales-order": {
+        "required": [
+          "items"
+        ],
         "properties": {
-          "user": {
-            "type": "string"
-          },
           "shipped": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "subtotal": {
             "type": "number"
@@ -6025,6 +6154,64 @@
           },
           "items": {
             "type": "object"
+          },
+          "user": {
+            "type": "string"
+          },
+          "shippingAddress": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "billingAddress": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "paymentId": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -6160,7 +6347,7 @@
                 "favorites": {
                   "type": "string"
                 },
-                "salesOrders": {
+                "orders": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -6344,17 +6531,15 @@
               }
             }
           },
-          "salesOrders": {
+          "orders": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "items"
               ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "user": {
                   "type": "string"
                 },
                 "shipped": {
@@ -6374,6 +6559,18 @@
                 },
                 "items": {
                   "type": "object"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "shippingAddress": {
+                  "type": "component"
+                },
+                "billingAddress": {
+                  "type": "component"
+                },
+                "paymentId": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -6452,7 +6649,7 @@
           "favorites": {
             "type": "string"
           },
-          "salesOrders": {
+          "orders": {
             "type": "array",
             "items": {
               "type": "string"

@@ -588,7 +588,7 @@
                 "favorites": {
                   "type": "string"
                 },
-                "salesOrders": {
+                "orders": {
                   "type": "array",
                   "items": {
                     "type": "string"

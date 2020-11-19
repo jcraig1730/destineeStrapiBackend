@@ -81,14 +81,14 @@
       "type": "string"
     },
     "cart": {
-      "via": "user",
-      "model": "cart"
+      "model": "cart",
+      "via": "user"
     },
     "favorites": {
-      "via": "user",
-      "model": "favorite"
+      "model": "favorite",
+      "via": "user"
     },
-    "salesOrders": {
+    "orders": {
       "via": "user",
       "collection": "sales-order"
     }

@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "sales_orders",
   "info": {
-    "name": "salesOrder",
+    "name": "order",
     "description": ""
   },
   "options": {
@@ -11,13 +11,9 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "salesOrders"
-    },
     "shipped": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "subtotal": {
       "type": "decimal"
@@ -32,7 +28,26 @@
       "type": "decimal"
     },
     "items": {
-      "type": "json"
+      "type": "json",
+      "required": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
+    },
+    "shippingAddress": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.address"
+    },
+    "billingAddress": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.address"
+    },
+    "paymentId": {
+      "type": "string"
     }
   }
 }

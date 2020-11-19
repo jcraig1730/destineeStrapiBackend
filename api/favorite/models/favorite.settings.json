@@ -15,9 +15,9 @@
       "collection": "item"
     },
     "user": {
+      "via": "favorites",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "favorites"
+      "model": "user"
     }
   }
 }
