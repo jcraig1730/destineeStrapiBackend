@@ -15,7 +15,6 @@ const calculateTotal = (items, shipping = 0) => {
 
 module.exports = {
   createPaymentIntent: async ({ request, response }) => {
-    console.clear();
     try {
       const { items, shipping, total } = request.body;
       const calculatedTotal = calculateTotal(items, shipping);

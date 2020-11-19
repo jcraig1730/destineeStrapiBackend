@@ -32,5 +32,8 @@ module.exports = {
         console.log(err);
       }
     },
+    async beforeFindOne(result, populate) {
+      populate.push("cart");
+    },
   },
 };
