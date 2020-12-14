@@ -85,12 +85,11 @@
       "via": "user"
     },
     "favorites": {
-      "model": "favorite",
-      "via": "user"
+      "collection": "item"
     },
     "orders": {
-      "via": "user",
-      "collection": "sales-order"
+      "collection": "sales-order",
+      "via": "user"
     }
   }
 }

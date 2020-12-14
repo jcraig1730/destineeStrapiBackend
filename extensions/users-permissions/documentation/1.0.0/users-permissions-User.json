@@ -1302,10 +1302,34 @@
               "id": {
                 "type": "string"
               },
-              "items": {
+              "title": {
                 "type": "string"
               },
-              "user": {
+              "price": {
+                "type": "number"
+              },
+              "description": {
+                "type": "string"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mainImage": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "quantity": {
+                "type": "integer"
+              },
+              "published_at": {
                 "type": "string"
               },
               "created_by": {

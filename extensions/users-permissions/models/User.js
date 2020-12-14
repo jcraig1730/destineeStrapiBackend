@@ -33,7 +33,10 @@ module.exports = {
       }
     },
     async beforeFindOne(result, populate) {
+      if (!populate) return;
       populate.push("cart");
+      populate.push("orders");
+      populate.push("favorites");
     },
   },
 };

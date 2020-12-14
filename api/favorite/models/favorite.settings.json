@@ -13,11 +13,6 @@
   "attributes": {
     "items": {
       "collection": "item"
-    },
-    "user": {
-      "via": "favorites",
-      "plugin": "users-permissions",
-      "model": "user"
     }
   }
 }

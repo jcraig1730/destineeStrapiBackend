@@ -18,7 +18,6 @@ module.exports = {
     try {
       const { items, shipping, total } = request.body;
       const calculatedTotal = calculateTotal(items, shipping);
-
       const paymentIntent = await stripe.paymentIntents.create({
         amount: calculatedTotal,
         currency: "usd",
