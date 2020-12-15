@@ -10,7 +10,7 @@ const calculateTotal = (items, shipping = 0) => {
     return total + item.quantity * item.item.price;
   }, 0);
   const tax = subtotal * 0.0825;
-  return Number((tax + subtotal + shipping).toFixed(2)) * 100;
+  return parseInt((tax + subtotal + shipping) * 100);
 };
 
 module.exports = {
